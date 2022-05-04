@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import {
   Container,
   Box,
+  Link,
   Stack,
   Heading,
   Flex,
@@ -14,7 +15,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import Link from "next/link";
+// import ThemeToggleButton from './theme-toggle-button'
+// import { IoLogoGithub } from 'react-icons/io5'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
@@ -36,13 +38,14 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
 
 const Navbar = (props) => {
   const { path } = props;
+
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
       bg={useColorModeValue("#ffffff40", "#20202380")}
-      style={{ backdropFilter: "blur(10px)" }}
+      css={{ backdropFilter: "blur(10px)" }}
       zIndex={1}
       {...props}
     >
@@ -54,11 +57,12 @@ const Navbar = (props) => {
         align="center"
         justify="space-between"
       >
-        <Flex aligh="center" mr={5}>
+        <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={"tighter"}>
             <Logo />
           </Heading>
         </Flex>
+
         <Stack
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}
@@ -73,10 +77,25 @@ const Navbar = (props) => {
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
+          <LinkItem
+            target="_blank"
+            href="https://github.com/craftzdog/craftzdog-homepage"
+            path={path}
+            display="inline-flex"
+            alignItems="center"
+            style={{ gap: 4 }}
+            pl={2}
+          >
+            {/* <IoLogoGithub /> */}
+            Source
+          </LinkItem>
         </Stack>
-         <Box  flex={1} align="right">
-           <Box ml={2} display={{base: 'inline-block', md: "none"}}>
-           <Menu isLazy id="navbar-menu">
+
+        <Box flex={1} align="right">
+          {/* <ThemeToggleButton /> */}
+
+          <Box ml={2} display={{ base: "inline-block", md: "none" }}>
+            <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
@@ -91,15 +110,18 @@ const Navbar = (props) => {
                   <MenuItem as={Link}>Works</MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>posts</MenuItem>
+                  <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
-                <MenuItem as={Link} href="#">
+                <MenuItem
+                  as={Link}
+                  href="https://github.com/craftzdog/craftzdog-homepage"
+                >
                   View Source
                 </MenuItem>
               </MenuList>
             </Menu>
-           </Box>
-         </Box>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
