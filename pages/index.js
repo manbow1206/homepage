@@ -7,16 +7,15 @@ const Page = () => {
         Hello, I&apos;m a full-stack developer based in Japan!
       </Box>
 
-       <Box display={{md : 'flex'}}>
-         <Box flexGlow={1}>
-           <Heading as="h2" variant="page-title">
-             Takuya Yasunaga
-           </Heading>
-           <p>Digital Craftzman (Artist / Developer / Designer)</p>
-         </Box>
-       </Box>
+      <Box display={{ md: "flex" }}>
+        <Box flexGlow={1}>
+          <Heading as="h2" variant="page-title">
+            Takuya Yasunaga
+          </Heading>
+          <p>Digital Craftzman (Artist / Developer / Designer)</p>
+        </Box>
+      </Box>
     </Container>
-
-  )
+  );
 };
 export default Page;
