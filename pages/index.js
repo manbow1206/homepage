@@ -70,7 +70,7 @@ const Page = () => {
           .
         </Paragraph>
         <Box align="right" my={4}>
-          <NextLink href="/work">
+          <NextLink href="/works">
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               My Profile
             </Button>
