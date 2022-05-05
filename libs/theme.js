@@ -19,7 +19,7 @@ const components = {
         textDecorationColor: "#525252",
         textDecorationThickness: 4,
         marginTop: 3,
-        marginButtom: 4,
+        marginBottom: 4,
       },
     },
   },
@@ -32,19 +32,17 @@ const components = {
 };
 
 const fonts = {
-    heading: "'M PLUS Rounded 1c'"
-}
+  heading: "'M PLUS Rounded 1c'",
+};
 
 const colors = {
-    glassTeal: '#88ccca'
-}
+  grassTeal: "#88ccca",
+};
 
-const theme = extendTheme({
-    config,
-    styles,
-    components,
-    colors,
-    fonts,
-})
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: true,
+};
 
-export default theme
+const theme = extendTheme({ config, styles, components, fonts, colors });
+export default theme;
