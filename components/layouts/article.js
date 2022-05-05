@@ -9,24 +9,30 @@ const variants = {
 };
 
 const Layout = ({ children, title }) => {
-  <motion.article
-    initial="hidden"
-    animate="enter"
-    exit="exit"
-    variants={variants}
-    transition={{ duration: 0.4, type: "easeInOut" }}
-    style={{ position: "relative" }}
-  >
-    <>
-      {title && (
-        <Head>
-          <title>{title} - Takuya Yasunaga</title>
-        </Head>
-      )}
-      {children}
-      <GridItemStyle />
-    </>
-  </motion.article>;
+  const t = `${title} - Takuya Matsuyama`;
+  return (
+    <motion.article
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      variants={variants}
+      transition={{ duration: 0.4, type: "easeInOut" }}
+      style={{ position: "relative" }}
+    >
+      <>
+        {title && (
+          <Head>
+            <title>{t}</title>
+            <meta name="twitter:title" content={t} />
+            <meta property="og:title" content={t} />
+          </Head>
+        )}
+        {children}
+
+        <GridItemStyle />
+      </>
+    </motion.article>
+  );
 };
 
 export default Layout;
