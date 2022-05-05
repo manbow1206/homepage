@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import NextLink from "next/link";
 import {
   Container,
   Box,
@@ -8,9 +8,10 @@ import {
   useColorModeValue,
   Button,
 } from "@chakra-ui/react";
-import { ChevronRightIcon } from '@chakra-ui/icons';
+import { ChevronRightIcon } from "@chakra-ui/icons";
 import Section from "../components/section";
 import Paragraph from "../components/paragraph";
+import { BioSection, BioYear } from "../components/bio";
 
 const Page = () => {
   return (
@@ -62,7 +63,11 @@ const Page = () => {
           remaining essentially unchanged. It was popularised in the 1960s with
           the release of Letraset sheets containing Lorem Ipsum passages, and
           more recently with desktop publishing software like Aldus PageMaker
-          including versions of{' '}<NextLink href="#"><Link>Manbow</Link></NextLink> .
+          including versions of{" "}
+          <NextLink href="#">
+            <Link>Manbow</Link>
+          </NextLink>{" "}
+          .
         </Paragraph>
         <Box align="right" my={4}>
           <NextLink href="/work">
@@ -71,6 +76,30 @@ const Page = () => {
             </Button>
           </NextLink>
         </Box>
+      </Section>
+      <Section delay={2}>
+        <Heading as="h3" variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1995</BioYear>
+          Bormn in Saitama(埼玉), Japan.
+        </BioSection>
+        <BioSection>
+          <BioYear>2014</BioYear>
+          JGSDF Signal Company, 1st Airborne Brigade.
+        </BioSection>
+        <BioSection>
+          <BioYear>2019 to present</BioYear>
+          iYell inc, Web Developer.
+        </BioSection>
+      </Section>
+
+      <Section delay={2}>
+        <Heading as="h3" variant="section-title">
+          hobby
+        </Heading>
+        <Paragraph>MTB, Book, Training, Sea Diving</Paragraph>
       </Section>
     </Container>
   );
