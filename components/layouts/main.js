@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "../navbar";
+import Nossr from "../no-ssr";
 import { Box, Container } from "@chakra-ui/react";
 import VoxelDesk from "../voxel-desk";
 
@@ -12,7 +13,9 @@ const Main = ({ children, router }) => {
       </Head>
       <Navbar path={router.asPath} />
       <Container maxW="container.md" pt={14}>
-        <VoxelDesk></VoxelDesk>
+        <Nossr>
+          <VoxelDesk />
+        </Nossr>
         {children}
       </Container>
     </Box>

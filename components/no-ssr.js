@@ -1,6 +1,6 @@
-import dynamic from "next/dynamic"
-import React from "react"
+import dynamic from "next/dynamic";
+import React from "react";
 
-const Nossr = (props = <>{props.children}</>)
+const Nossr = (props) => <>{props.children}</>;
 
-export default dynamic(() => Promise.resolve(Nossr),{ssr: false})
+export default dynamic(() => Promise.resolve(Nossr), { ssr: false });
