@@ -5,6 +5,10 @@ import {
   Heading,
   Image,
   Link,
+  List,
+  ListItem,
+  Icon,
+  SimpleGrid,
   useColorModeValue,
   Button,
 } from "@chakra-ui/react";
@@ -13,6 +17,8 @@ import Layout from "../components/layouts/article";
 import Section from "../components/section";
 import Paragraph from "../components/paragraph";
 import { BioSection, BioYear } from "../components/bio";
+import { GridItem } from "../components/grid-item";
+import { IoLogoGithub, IoLogoInstagram, IoLogoTwitter } from "react-icons/io5";
 
 const Page = () => {
   return (
@@ -102,6 +108,50 @@ const Page = () => {
             hobby
           </Heading>
           <Paragraph>MTB, Book, Training, Sea Diving</Paragraph>
+        </Section>
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/manbow1206">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @manbow1206
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+          <List>
+            <ListItem>
+              <Link href="https://twitter.com/Manbow_roy">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoTwitter} />}
+                >
+                  @Manbow_roy
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+          <List>
+            <ListItem>
+              <Link href="https://www.instagram.com/manbow_5656/">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoLogoInstagram} />}
+                >
+                  @Manbow_roy
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
         </Section>
       </Container>
     </Layout>
