@@ -85,7 +85,7 @@ const Page = () => {
             </NextLink>
           </Box>
         </Section>
-        <Section delay={2}>
+        <Section delay={0.4}>
           <Heading as="h3" variant="section-title">
             Bio
           </Heading>
@@ -103,13 +103,13 @@ const Page = () => {
           </BioSection>
         </Section>
 
-        <Section delay={2}>
+        <Section delay={0.8}>
           <Heading as="h3" variant="section-title">
             hobby
           </Heading>
           <Paragraph>MTB, Book, Training, Sea Diving</Paragraph>
         </Section>
-        <Section delay={0.3}>
+        <Section delay={1.2}>
           <Heading as="h3" variant="section-title">
             On the web
           </Heading>
