@@ -29,6 +29,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
         color={active ? "#202023" : inactiveColor}
         target={target}
         {...props}
+        borderRadius="md"
       >
         {children}
       </Link>
@@ -71,6 +72,9 @@ const Navbar = (props) => {
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
+          <LinkItem href="/" path={path}>
+            Home
+          </LinkItem>
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
@@ -103,15 +107,22 @@ const Navbar = (props) => {
               />
               <MenuList>
                 <NextLink href="/" passHref>
-                  <MenuItem as={Link}>About</MenuItem>
+                  <MenuItem borderRadius="md" as={Link}>
+                    About
+                  </MenuItem>
                 </NextLink>
                 <NextLink href="/works" passHref>
-                  <MenuItem as={Link}>Works</MenuItem>
+                  <MenuItem borderRadius="md" as={Link}>
+                    Works
+                  </MenuItem>
                 </NextLink>
                 <NextLink href="/posts" passHref>
-                  <MenuItem as={Link}>Posts</MenuItem>
+                  <MenuItem borderRadius="md" as={Link}>
+                    Posts
+                  </MenuItem>
                 </NextLink>
                 <MenuItem
+                  borderRadius="md"
                   as={Link}
                   href="https://github.com/craftzdog/craftzdog-homepage"
                 >
